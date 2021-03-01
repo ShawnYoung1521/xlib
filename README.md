@@ -1,7 +1,11 @@
-![Log](https://github.com/itemuse/XLib/blob/main/png/xylibrary.png)
-
+![Log](https://github.com/itemuse/XLib/blob/master/png/xylibrary.png)
+       
 ## 引用方式
-### 一
+### 版本
+[![](https://jitpack.io/v/itemuse/XLib.svg)](https://jitpack.io/#itemuse/XLib)
+
+### 一.将JitPack存储库添加到您的构建文件中
+将其添加到存储库末尾的root build.gradle中：
 ```
 allprojects {
       repositories {
@@ -10,11 +14,11 @@ allprojects {
       }
 }
 ```
-### 二
+### 二.添加依赖项
 ```
 dependencies {
       ...
-      implementation 'com.github.itemuse:XLib:latest.release'
+      implementation 'com.github.itemuse:XLib:Tag'
 }
 ```
 
@@ -29,5 +33,5 @@ public void onCreate() {
 }
 ```
 
-### HRCouncil: 
+### Predecessors trees: 
 [Blankj](http://blankj.com)
