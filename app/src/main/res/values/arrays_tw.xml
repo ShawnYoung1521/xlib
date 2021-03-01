@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="reverse_type_entries_two">
+        <item>Dual camera</item>
+        <item>Four camera</item>
+        <item>AHD</item>
+    </string-array>
+    <string-array name="new_reverse_cis1_entries">
+        <item>AHD 720P 25fps</item>
+        <item>AHD 720P 30fps</item>
+        <item>AHD 1080P 25fps</item>
+        <item>AHD 1080P 30fps</item>
+    </string-array>
+    <string-array name="new_reverse_cis2_entries">
+        <item>CVBS_NTSC</item>
+        <item>CVBS_PAL</item>
+        <item>AHD 720P 25fps</item>
+        <item>AHD 720P 30fps</item>
+        <item>AHD 1080P 25fps</item>
+        <item>AHD 1080P 30fps</item>
+        <item>TVI 720P 25fps</item>
+        <item>TVI 720P 30fps</item>
+        <item>TVI 1080P 25fps</item>
+        <item>TVI 1080P 30fps</item>
+    </string-array>
+</resources>
