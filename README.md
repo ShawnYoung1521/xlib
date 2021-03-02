@@ -1,7 +1,7 @@
 ![Log](https://github.com/itemuse/XLib/blob/master/png/xylibrary.png)
        
 ## 引用方式
-### 版本
+### TAG版本
 [![](https://jitpack.io/v/itemuse/XLib.svg)](https://jitpack.io/#itemuse/XLib)
 
 ### 一.将JitPack存储库添加到您的构建文件中
@@ -18,7 +18,7 @@ allprojects {
 ```
 dependencies {
       ...
-      implementation 'com.github.itemuse:XLib:Tag'
+      implementation 'com.github.itemuse:xlib:Tag'
 }
 ```
 
