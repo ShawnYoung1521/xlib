@@ -6,6 +6,7 @@ import android.app.ActivityManager;
 import android.app.AppOpsManager;
 import android.app.usage.UsageStats;
 import android.app.usage.UsageStatsManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -25,7 +26,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
-
 import cn.xy.library.XApp;
 import cn.xy.library.util.log.XLog;
 
@@ -65,6 +65,10 @@ import cn.xy.library.util.log.XLog;
  * getAppInfo                        : 获取 XApp 信息
  * getAppsInfo                       : 获取所有已安装 XApp 信息
  * getApkInfo                        : 获取 Apk 信息
+ * changeAppState                    : 更改APP的启用/禁用状态
+ * getAppState                       : 获取APP的启用/禁用状态
+ * changActivityState                : 更改Activity的启用/禁用状态
+ * getActivityState                  : 获取Activity的启用/禁用状态
  */
 public final class XApplication {
 
@@ -1033,6 +1037,39 @@ public final class XApplication {
             }
         } catch (Exception e) {
             XLog.debug(e.getMessage());
+        }
+    }
+
+    /**
+     * @param componentName to hidden or show activity
+     * @param enable true ENABLED ; false DISABLED
+     * need android:sharedUserId="android.uid.system"
+     */
+    public void changActivityState(ComponentName componentName,boolean enable){
+        try {
+            PackageManager packageManager = XApp.getApp().getPackageManager();
+            if (enable){
+                packageManager.setComponentEnabledSetting(componentName,PackageManager.COMPONENT_ENABLED_STATE_ENABLED,0);
+            }else {
+                packageManager.setComponentEnabledSetting(componentName,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,0);
+            }
+        } catch (Exception e){
+            XLog.debug(e.getMessage());
+        }
+    }
+
+    /**
+     * @return
+     * -1 no intalled
+     *  1 ENABLED
+     *  2 DISABLED
+     */
+    public int getActivityState(ComponentName componentName){
+        try {
+            PackageManager packageManager = XApp.getApp().getPackageManager();
+            return packageManager.getComponentEnabledSetting(componentName);
+        } catch (Exception e){
+            return -1;
         }
     }
 
