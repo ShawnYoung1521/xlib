@@ -1027,7 +1027,7 @@ public final class XApplication {
      * @param enable true ENABLED ; false DISABLED
      * need android:sharedUserId="android.uid.system"
      */
-    public void changeAppState(String packageName, boolean enable){
+    public static void changeAppState(String packageName, boolean enable){
         try {
             PackageManager packageManager = XApp.getApp().getPackageManager();
             if(enable){
@@ -1045,7 +1045,7 @@ public final class XApplication {
      * @param enable true ENABLED ; false DISABLED
      * need android:sharedUserId="android.uid.system"
      */
-    public void changActivityState(ComponentName componentName,boolean enable){
+    public static void changActivityState(ComponentName componentName,boolean enable){
         try {
             PackageManager packageManager = XApp.getApp().getPackageManager();
             if (enable){
@@ -1064,7 +1064,7 @@ public final class XApplication {
      *  1 ENABLED
      *  2 DISABLED
      */
-    public int getActivityState(ComponentName componentName){
+    public static int getActivityState(ComponentName componentName){
         try {
             PackageManager packageManager = XApp.getApp().getPackageManager();
             return packageManager.getComponentEnabledSetting(componentName);
@@ -1080,7 +1080,7 @@ public final class XApplication {
      *  2 DISABLED
      *
      */
-    public int getAppState(String packageName) {
+    public static int getAppState(String packageName) {
         try {
             PackageManager packageManager = XApp.getApp().getPackageManager();
             return packageManager.getApplicationEnabledSetting(packageName);
