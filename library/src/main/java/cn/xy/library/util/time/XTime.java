@@ -332,7 +332,7 @@ public final class XTime {
     public static long getTimeSpan(final long millis1,
                                    final long millis2,
                                    @TimeConstants.Unit final int unit) {
-        return millis2TimeSpan(millis1 - millis2, unit);
+        return millis2TimeSpan(millis2 - millis1, unit);
     }
 
     /**
